@@ -1,11 +1,18 @@
 "use client";
 
+import { useRouter } from "next/navigation"; // Thêm router
+
 export default function SignUpForm() {
+  const router = useRouter(); // Sử dụng router để điều hướng
+
   return (
     <div className="bg-white p-8 sm:p-10 rounded-2xl shadow-lg w-full max-w-md border border-gray-200">
       {/* Tabs */}
       <div className="flex border-b mb-6">
-        <button className="w-1/2 text-center pb-2 text-gray-600 hover:text-pink-500">
+        <button
+          className="w-1/2 text-center pb-2 text-gray-600 hover:text-pink-500"
+          onClick={() => router.push("/signin")}
+        >
           Sign In
         </button>
         <button className="w-1/2 text-center pb-2 border-b-2 border-pink-500 font-semibold text-pink-600">
